@@ -19,3 +19,7 @@
     - htmlString = `<div class="image-wrapper"><img class="image" src="$(currentSrc)"></div>`
     - Facciamo console.log(htmlString) per vedere cosa accade.
     - Noteremo in console che è stato inserito, tramite template literal, all'interno del nostro div.gallery, un div contenente un tag img al cui interno a sua volta è stato inserita la variabile currentSrc dichiarato precedentemente.
+    
+- Aggiungere un bottone che ti permetta di far scorrere avanti le foto.
+  - Creare e dichiarare una variabile activeImage che abbia lo scopo di segnalarci qual è l'immagine attiva di riferimento.
+  - Creare un eventListner che ci permetta al click sul bottone di cambiare immagine.

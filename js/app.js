@@ -31,5 +31,34 @@ const images = [
 
  const imageDOMElements = document.querySelectorAll('.image');
  console.log(imageDOMElements);
- 
 
+
+ let activeImage = document.querySelectorAll('.image')[0];
+activeImage.classList.add('active');
+console.log(activeImage);
+
+btnDOMElement = document.getElementById('btnDown');
+console.log(btnDOMElement);
+
+//  document.querySelectorAll('.image')[0].classList.remove
+btnDOMElement.addEventListener("click", function () {
+    console.log('funziona');
+
+    document.querySelectorAll('.image')[0].classList.remove('active');
+    document.querySelectorAll('.image')[1].classList.add('active');
+    activeImage++
+    
+    document.querySelectorAll('.image')[1].classList.remove('active');
+    document.querySelectorAll('.image')[2].classList.add('active');
+    activeImage++
+
+    document.querySelectorAll('.image')[2].classList.remove('active');
+    document.querySelectorAll('.image')[3].classList.add('active');
+    activeImage++
+
+    document.querySelectorAll('.image')[3].classList.remove('active');
+    document.querySelectorAll('.image')[4].classList.add('active');
+    
+  });
+
+ 
