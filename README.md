@@ -16,6 +16,6 @@
      - Notiamo che ad ogni indice del nostro array corrisponde la corrispettiva immagine presente nell'array.
   - Concateniamo un template literal al nostro div.gallery:
     - Dichiariamo una variabile htmlString.
-    - htmlString = `<div><img scr="$(currentSrc)"></div>`
+    - htmlString = `<div class="image-wrapper"><img class="image" src="$(currentSrc)"></div>`
     - Facciamo console.log(htmlString) per vedere cosa accade.
     - Noteremo in console che è stato inserito, tramite template literal, all'interno del nostro div.gallery, un div contenente un tag img al cui interno a sua volta è stato inserita la variabile currentSrc dichiarato precedentemente.
