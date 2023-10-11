@@ -37,12 +37,13 @@ console.log(arrowTop, arrowDown);
 
 arrowDown.addEventListener('click', function () {
     console.log('funziona')
-for (i = 0; i < images.length; i++) {
+// for (i = 0; i < images.length; i++) {
 
     itemDOMElements[currentIndex].classList.remove('active');
-    itemDOMElements[currentIndex + 1].classList.add('active');
-}
-    console.log(itemDOMElements[currentIndex + 1]);
+    currentIndex++;
+    itemDOMElements[currentIndex].classList.add('active');
+// }
+    // console.log(itemDOMElements[currentIndex]);
 })
 
 
