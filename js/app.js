@@ -1,4 +1,5 @@
 
+
 console.log('ciao')
 
 const images = [
@@ -37,10 +38,11 @@ console.log(arrowTop, arrowDown);
 arrowDown.addEventListener('click', function () {
     console.log('funziona')
 for (i = 0; i < images.length; i++) {
+
     itemDOMElements[currentIndex].classList.remove('active');
     itemDOMElements[currentIndex + 1].classList.add('active');
 }
-    console.log(itemDOMElements[currentIndex]);
+    console.log(itemDOMElements[currentIndex + 1]);
 })
 
 
@@ -49,3 +51,4 @@ for (i = 0; i < images.length; i++) {
 
 //     console.log(itemDOMElements[currentIndex]);
 // })
+
