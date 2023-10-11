@@ -1,64 +1,51 @@
-console.log('Ciao')
 
-const galleryDOMElement = document.querySelector('.gallery');
-console.log(galleryDOMElement);
+console.log('ciao')
 
 const images = [
     './img/01.webp',
     './img/02.webp',
     './img/03.webp',
     './img/04.webp',
-    './img/05.webp'];
+    './img/05.webp',
+];
 
- console.log(images);   
+const carouselDOMElement = document.querySelector('.carousel');
+console.log(carouselDOMElement, images);
 
- for (let i = 0; i < images.length; i++) {
-    // console.log(i);
+for (let i = 0; i < images.length; i++) {
+    console.log(images[i]);
+    const src = images[i];
 
-    const currentSrc = images[i];
-    console.log(currentSrc);
+    const html = `<img class="carousel__item" src="${src}" alt=""></img>`;
 
-    const htmlString = `
-    <div class="image-wrapper">
-       <img class="image" src="${currentSrc}">
-    </div>
-    `
+    carouselDOMElement.innerHTML += html;
+    // console.log(carouselDOMElement);
+}
 
-    console.log(htmlString);
-    galleryDOMElement.innerHTML += htmlString;
-    
- }
+const itemDOMElements = document.querySelectorAll('.carousel__item');
+console.log(itemDOMElements);
 
- const imageDOMElements = document.querySelectorAll('.image');
- console.log(imageDOMElements);
+let currentIndex = 0;
+
+let activeImage = itemDOMElements[currentIndex];
+activeImage.classList.add('active')
+
+const arrowTop = document.querySelector('.carousel .arrow-top');
+const arrowDown = document.querySelector('.carousel .arrow-down');
+console.log(arrowTop, arrowDown);
+
+arrowDown.addEventListener('click', function () {
+    console.log('funziona')
+for (i = 0; i < images.length; i++) {
+    itemDOMElements[currentIndex].classList.remove('active');
+    itemDOMElements[currentIndex + 1].classList.add('active');
+}
+    console.log(itemDOMElements[currentIndex]);
+})
 
 
- let activeImage = document.querySelectorAll('.image')[0];
-activeImage.classList.add('active');
-console.log(activeImage);
+// arrowTop.addEventListener('click', function () {
+//     console.log('funziona')
 
-btnDOMElement = document.getElementById('btnDown');
-console.log(btnDOMElement);
-
-//  document.querySelectorAll('.image')[0].classList.remove
-btnDOMElement.addEventListener("click", function () {
-    console.log('funziona');
-
-    document.querySelectorAll('.image')[0].classList.remove('active');
-    document.querySelectorAll('.image')[1].classList.add('active');
-    activeImage++
-    
-    document.querySelectorAll('.image')[1].classList.remove('active');
-    document.querySelectorAll('.image')[2].classList.add('active');
-    activeImage++
-
-    document.querySelectorAll('.image')[2].classList.remove('active');
-    document.querySelectorAll('.image')[3].classList.add('active');
-    activeImage++
-
-    document.querySelectorAll('.image')[3].classList.remove('active');
-    document.querySelectorAll('.image')[4].classList.add('active');
-    
-  });
-
- 
+//     console.log(itemDOMElements[currentIndex]);
+// })
