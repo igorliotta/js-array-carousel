@@ -61,7 +61,7 @@ arrowTop.addEventListener('click', function () {
 const activeSlideElement = itemDOMElements[currentIndex];
 activeSlideElement.classList.remove('active');
 
-if (currentIndex === itemDOMElements.length - 1) {
+if (currentIndex === 0) {
     currentIndex = itemDOMElements.length - 1;
     } else {
     currentIndex--;
