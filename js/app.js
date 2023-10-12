@@ -37,19 +37,37 @@ console.log(arrowTop, arrowDown);
 
 arrowDown.addEventListener('click', function () {
     console.log('funziona')
-// for (i = 0; i < images.length; i++) {
 
-    itemDOMElements[currentIndex].classList.remove('active');
+
+   const activeSlideElement = itemDOMElements[currentIndex];
+   activeSlideElement.classList.remove('active');
+
+   if (currentIndex === itemDOMElements.length - 1) {
+    currentIndex = 0;
+   } else {
     currentIndex++;
-    itemDOMElements[currentIndex].classList.add('active');
-// }
-    // console.log(itemDOMElements[currentIndex]);
+   }
+
+   const nextSlideElement = itemDOMElements[currentIndex];
+   nextSlideElement.classList.add('active');
+
+    
 })
 
 
-// arrowTop.addEventListener('click', function () {
-//     console.log('funziona')
+arrowTop.addEventListener('click', function () {
+    console.log('funziona')
 
-//     console.log(itemDOMElements[currentIndex]);
-// })
+const activeSlideElement = itemDOMElements[currentIndex];
+activeSlideElement.classList.remove('active');
+
+if (currentIndex === itemDOMElements.length - 1) {
+    currentIndex = itemDOMElements.length - 1;
+    } else {
+    currentIndex--;
+    }
+    
+    const nextSlideElement = itemDOMElements[currentIndex];
+    nextSlideElement.classList.add('active');
+})
 
